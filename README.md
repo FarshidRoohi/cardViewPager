@@ -10,4 +10,4 @@
 
 ###### sample : 
 
-![Screen Shot](https://raw.githubusercontent.com/FarshidRoohi/cardViewPager/master/image/sample_image.png)
+<img src="https://raw.githubusercontent.com/FarshidRoohi/cardViewPager/master/image/sample_image.png" alt="screen show" width="300px" height="500px">
