@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 26
@@ -20,6 +22,52 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    task generateSourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier 'sources'
+    }
+
+    task generateJavadocs(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath()
+                .join(File.pathSeparator))
+    }
+
+    task generateJavadocsJar(type: Jar) {
+        from generateJavadocs.destinationDir
+        classifier 'javadoc'
+    }
+
+
+
+    artifacts {
+        archives generateJavadocsJar
+        archives generateSourcesJar
+    }
+    version = "0.0.1"
+    group = "com.zarinpal"
+
+    bintray {
+        user = 'izarinpal'
+        key = '423e75c49a94bbe24e35b76e4c8bd8c8cc5b77e8'
+        pkg {
+            repo = 'lib'
+            userOrg = 'zarinpali'
+            name = 'CardViewPager'
+
+            version {
+                name = '0.0.1'
+                desc = 'android  Card ViewPager'
+                released = new Date()
+                vcsTag = '0.0.1'
+            }
+
+            licenses = ['Apache-2.0']
+            vcsUrl = 'https://github.com/FarshidRoohi/cardViewPager'
+            websiteUrl = 'www.zarinpal.com'
+        }
+        configurations = ['archives']
     }
 
 }
