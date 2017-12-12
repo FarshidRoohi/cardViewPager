@@ -13,7 +13,7 @@
         android:clipToPadding="false"
         android:overScrollMode="always"
         android:paddingBottom="5dp"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:paddingTop="5dp"  />
 </LinearLayout>
