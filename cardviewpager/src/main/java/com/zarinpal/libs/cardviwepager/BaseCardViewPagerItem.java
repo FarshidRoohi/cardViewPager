@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,20 +22,11 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
     private List<CardView> views;
     private List<T> models;
     private float baseElevation;
-    private CardView cardView;
-    private int marginLeft = 10;
-    private int marginTop = 10;
-    private int marginRight = 10;
-    private int marginBottom = 10;
 
     @LayoutRes
     public abstract int getLayout();
 
     public abstract void bindView(View view, T item);
-
-//    public abstract ViewPager getViewPager();
-//
-//    public abstract C getAdapter();
 
     public BaseCardViewPagerItem() {
         this.views = new ArrayList<>();
@@ -50,19 +42,18 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
         return this.models.get(position);
     }
 
-    @Override
     public float getBaseElevation() {
         return baseElevation;
     }
 
     @Override
     public CardView getCardViewAt(int position) {
-        return this.views.get(position);
+        return views.get(position);
     }
 
     @Override
     public int getCount() {
-        return this.models.size();
+        return models.size();
     }
 
     @Override
@@ -83,11 +74,8 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
         if (baseElevation == 0) {
             baseElevation = cardView.getCardElevation();
         }
-
         cardView.setMaxCardElevation(baseElevation * MAX_ELEVATION_FACTOR);
-        views.set(position, cardView);
-
-
+        this.views.set(position, cardView);
 
         return rootView;
     }
@@ -96,12 +84,5 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
         views.set(position, null);
-    }
-
-    public void setMarginItem(int left, int top, int right, int bottom) {
-       this.marginLeft = left;
-       this.marginTop = top;
-       this.marginRight = right;
-       this.marginBottom = bottom;
     }
 }

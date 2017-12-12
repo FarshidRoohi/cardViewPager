@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
         adapter.addCardItem(item4);
         adapter.addCardItem(item5);
 
+        viewPager.setOffscreenPageLimit(5);
+
         ShadowTransformer mCardShadowTransformer = new ShadowTransformer(viewPager, adapter);
+        mCardShadowTransformer.enableScaling(false);
         viewPager.setPageTransformer(false, mCardShadowTransformer);
         viewPager.setAdapter(adapter);
     }
