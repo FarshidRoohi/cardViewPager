@@ -46,12 +46,12 @@ public class CardViewPager extends LinearLayout {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CardViewPager);
 
         // attrs indicator
-        this.dotSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_dotSize,
+        this.dotSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_indicatorSize,
                 Utilities.dpToPx(getContext(), this.dotSize));
-        this.gapSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_gapSize,
+        this.gapSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_indicatorGapSize,
                 Utilities.dpToPx(getContext(), this.gapSize));
-        this.scrollSpeed = typedArray.getInteger(R.styleable.CardViewPager_scrollSpeed, this.scrollSpeed);
-        this.visibleItems = typedArray.getInteger(R.styleable.CardViewPager_visibleItems, 0);
+        this.scrollSpeed = typedArray.getInteger(R.styleable.CardViewPager_indicatorScrollSpeed, this.scrollSpeed);
+        this.visibleItems = typedArray.getInteger(R.styleable.CardViewPager_indicatorVisibleItems, 0);
         this.visibilityIndicator = typedArray.getBoolean(R.styleable.CardViewPager_visibleIndicator, true);
         // attrs viewPager
         this.paddingLeft = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleLeftPadding, this.paddingLeft);
@@ -59,9 +59,9 @@ public class CardViewPager extends LinearLayout {
         this.paddingRight = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleRightPadding, this.paddingRight);
         this.paddingBottom = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleBottomPadding, this.paddingBottom);
 
-        this.drawableSelectIndicator = typedArray.getDrawable(R.styleable.CardViewPager_selectItemResource);
-        this.drawableUnSelectIndicator = typedArray.getDrawable(R.styleable.CardViewPager_unSelectItemResource);
-        this.drawableTransparentIndicator = typedArray.getDrawable(R.styleable.CardViewPager_transparentItemResource);
+        this.drawableSelectIndicator = typedArray.getDrawable(R.styleable.CardViewPager_selectIndicatorResource);
+        this.drawableUnSelectIndicator = typedArray.getDrawable(R.styleable.CardViewPager_unSelectIndicatorResource);
+        this.drawableTransparentIndicator = typedArray.getDrawable(R.styleable.CardViewPager_transparentIndicatorResource);
 
         if (this.drawableSelectIndicator == null) {
             this.drawableSelectIndicator = ContextCompat.getDrawable(getContext(), R.drawable.circle_selected_indicator);

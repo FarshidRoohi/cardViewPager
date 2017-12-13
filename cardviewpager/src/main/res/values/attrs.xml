@@ -5,9 +5,9 @@
     <attr name="gapSize" format="dimension" />
     <attr name="scrollSpeed" format="integer" />
     <attr name="visibleItems" format="integer" />
-    <attr name="selectItemResource" format="integer" />
-    <attr name="unSelectItemResource" format="integer" />
-    <attr name="transparentItemResource" format="integer" />
+    <attr name="selectIndicatorResource" format="integer" />
+    <attr name="unSelectIndicatorResource" format="integer" />
+    <attr name="transparentIndicatorResource" format="integer" />
 
     <attr name="visibleRightPadding" format="dimension" />
     <attr name="visibleLeftPadding" format="dimension" />
@@ -21,13 +21,13 @@
         <attr name="visibleTopPadding" />
         <attr name="visibleBottomPadding" />
 
-        <attr name="selectItemResource" />
-        <attr name="unSelectItemResource" />
-        <attr name="transparentItemResource" />
-        <attr name="dotSize" />
-        <attr name="gapSize" />
-        <attr name="scrollSpeed" />
-        <attr name="visibleItems" />
+        <attr name="selectIndicatorResource" />
+        <attr name="unSelectIndicatorResource" />
+        <attr name="transparentIndicatorResource" />
+        <attr name="indicatorSize" />
+        <attr name="indicatorGapSize" />
+        <attr name="indicatorScrollSpeed" />
+        <attr name="indicatorVisibleItems" />
     </declare-styleable>
 
     <declare-styleable name="ScrollViewPagerIndicator">
