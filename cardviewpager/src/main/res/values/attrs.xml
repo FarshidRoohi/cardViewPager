@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="dotSize" format="dimension" />
+    <attr name="gapSize" format="dimension" />
+    <attr name="scrollSpeed" format="integer" />
+    <attr name="visibleItems" format="integer" />
+    <attr name="selectItemResource" format="integer" />
+    <attr name="unSelectItemResource" format="integer" />
+    <attr name="transparentItemResource" format="integer" />
+
+    <attr name="visibleRightPadding" format="dimension" />
+    <attr name="visibleLeftPadding" format="dimension" />
+    <attr name="visibleTopPadding" format="dimension" />
+    <attr name="visibleBottomPadding" format="dimension" />
+
+    <declare-styleable name="CardViewPager">
+        <attr name="visibleIndicator" format="boolean" />
+        <attr name="visibleRightPadding" />
+        <attr name="visibleLeftPadding" />
+        <attr name="visibleTopPadding" />
+        <attr name="visibleBottomPadding" />
+
+        <attr name="selectItemResource" />
+        <attr name="unSelectItemResource" />
+        <attr name="transparentItemResource" />
+        <attr name="dotSize" />
+        <attr name="gapSize" />
+        <attr name="scrollSpeed" />
+        <attr name="visibleItems" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollViewPagerIndicator">
+        <attr name="dotSize" />
+        <attr name="gapSize" />
+        <attr name="scrollSpeed" />
+        <attr name="visibleItems" />
+    </declare-styleable>
+</resources>
