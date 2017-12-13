@@ -21,7 +21,7 @@ public class Adapter extends BaseCardViewPagerItem<Model> {
     @Override
     public void bindView(View view, Model item) {
 
-//        CardView cardView = view.findViewById(R.id.card_view);
+        CardView cardView = view.findViewById(R.id.card_view);
         ViewGroup layoutRoot = view.findViewById(R.id.layout_root);
         TextView txtTitle = view.findViewById(R.id.txt_title);
 
