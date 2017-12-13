@@ -85,4 +85,7 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
         container.removeView((View) object);
         this.views.set(position, null);
     }
+    public void setElevation(float value){
+        this.baseElevation = value;
+    }
 }
