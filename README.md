@@ -4,7 +4,7 @@
 - add library gradle : 
 
 ```Gradle
-    compile 'com.zarinpal:cardviewpager:0.0.1'
+    compile 'com.zarinpal:cardviewpager:0.0.2'
         
 ```
 

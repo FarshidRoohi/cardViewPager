@@ -43,17 +43,17 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
     }
 
     public float getBaseElevation() {
-        return baseElevation;
+        return this.baseElevation;
     }
 
     @Override
     public CardView getCardViewAt(int position) {
-        return views.get(position);
+        return this.views.get(position);
     }
 
     @Override
     public int getCount() {
-        return models.size();
+        return this.models.size();
     }
 
     @Override
@@ -71,10 +71,10 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
         cardView.setCardElevation(1);
 
         this.bindView(rootView, this.models.get(position));
-        if (baseElevation == 0) {
-            baseElevation = cardView.getCardElevation();
+        if (this.baseElevation == 0) {
+            this.baseElevation = cardView.getCardElevation();
         }
-        cardView.setMaxCardElevation(baseElevation * MAX_ELEVATION_FACTOR);
+        cardView.setMaxCardElevation(this.baseElevation * MAX_ELEVATION_FACTOR);
         this.views.set(position, cardView);
 
         return rootView;
@@ -83,6 +83,6 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
-        views.set(position, null);
+        this.views.set(position, null);
     }
 }
