@@ -1,5 +1,6 @@
 package com.zarinpal.libs.cardviewpager.demo;
 
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import com.zarinpal.libs.cardviwepager.BaseCardViewPagerItem;
  */
 
 public class Adapter extends BaseCardViewPagerItem<Model> {
+
     @Override
     public int getLayout() {
         return R.layout.item;
@@ -19,6 +21,7 @@ public class Adapter extends BaseCardViewPagerItem<Model> {
     @Override
     public void bindView(View view, Model item) {
 
+//        CardView cardView = view.findViewById(R.id.card_view);
         ViewGroup layoutRoot = view.findViewById(R.id.layout_root);
         TextView txtTitle = view.findViewById(R.id.txt_title);
 

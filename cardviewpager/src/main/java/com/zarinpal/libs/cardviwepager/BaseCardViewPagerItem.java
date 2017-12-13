@@ -2,13 +2,10 @@ package com.zarinpal.libs.cardviwepager;
 
 import android.support.annotation.LayoutRes;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,20 +60,19 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View rootView = LayoutInflater.from(container.getContext()).inflate(R.layout.default_card_view_pager, container, false);
-        CardView cardView = rootView.findViewById(R.id.card_view_pager);
-        View viewInflater = LayoutInflater.from(container.getContext()).inflate(getLayout(), cardView, false);
+        View rootView = LayoutInflater.from(container.getContext()).inflate(getLayout(), container, false);
         container.addView(rootView);
-        cardView.addView(viewInflater);
-        cardView.setCardElevation(1);
+        CardView cardView = getCardView((ViewGroup) rootView);
 
-        this.bindView(rootView, this.models.get(position));
-        if (this.baseElevation == 0) {
-            this.baseElevation = cardView.getCardElevation();
+        if (cardView != null) {
+            cardView.setCardElevation(1);
+            this.bindView(rootView, this.models.get(position));
+            if (this.baseElevation == 0) {
+                this.baseElevation = cardView.getCardElevation();
+            }
+            cardView.setMaxCardElevation(this.baseElevation * MAX_ELEVATION_FACTOR);
+            this.views.set(position, cardView);
         }
-        cardView.setMaxCardElevation(this.baseElevation * MAX_ELEVATION_FACTOR);
-        this.views.set(position, cardView);
-
         return rootView;
     }
 
@@ -85,7 +81,21 @@ public abstract class BaseCardViewPagerItem<T> extends PagerAdapter implements C
         container.removeView((View) object);
         this.views.set(position, null);
     }
-    public void setElevation(float value){
+
+    public void setElevation(float value) {
         this.baseElevation = value;
+    }
+
+    private CardView getCardView(ViewGroup parent) {
+        for (int i = 0; i < parent.getChildCount(); i++) {
+            View child = parent.getChildAt(i);
+            if (child instanceof CardView) {
+                return (CardView) child;
+            }
+            if (child instanceof ViewGroup) {
+                return getCardView((ViewGroup) child);
+            }
+        }
+        return null;
     }
 }
