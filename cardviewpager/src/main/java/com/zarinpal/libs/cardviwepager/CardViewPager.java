@@ -125,4 +125,9 @@ public class CardViewPager extends LinearLayout {
         }
         this.cardShadowTransformer.enableScaling(flag);
     }
+
+    public ViewPager getViewPager() {
+        return viewPager;
+    }
+
 }
