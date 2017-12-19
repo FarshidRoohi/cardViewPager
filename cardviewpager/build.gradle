@@ -49,8 +49,8 @@ android {
     group = "com.zarinpal"
 
     bintray {
-        user = 'izarinpal'
-        key = '423e75c49a94bbe24e35b76e4c8bd8c8cc5b77e8'
+        user = '***'
+        key = '***'
         pkg {
             repo = 'lib'
             userOrg = 'zarinpali'
