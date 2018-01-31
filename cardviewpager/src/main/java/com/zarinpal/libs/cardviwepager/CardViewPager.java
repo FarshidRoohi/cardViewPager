@@ -105,7 +105,7 @@ public class CardViewPager extends LinearLayout {
         this.indicator.setVisibility(this.visibilityIndicator ? VISIBLE : GONE);
 //        this.viewPagerIndicator.initAttrbs(this.dotSize, this.gapSize, this.scrollSpeed, this.visibleItems);
 //        this.viewPagerIndicator.setDrawableResource(this.drawableSelectIndicator, this.drawableUnSelectIndicator, this.drawableTransparentIndicator);
-//        this.viewPager.setPadding(this.paddingLeft, this.paddingTop, this.paddingRight, this.paddingBottom);
+        this.viewPager.setPadding(this.paddingLeft, this.paddingTop, this.paddingRight, this.paddingBottom);
 
     }
 
