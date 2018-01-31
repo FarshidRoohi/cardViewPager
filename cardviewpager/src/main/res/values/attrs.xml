@@ -21,13 +21,13 @@
         <attr name="visibleTopPadding" />
         <attr name="visibleBottomPadding" />
 
-        <attr name="selectIndicatorResource" />
-        <attr name="unSelectIndicatorResource" />
-        <attr name="transparentIndicatorResource" />
+        <attr name="selectIndicatorColor" />
+        <attr name="unSelectIndicatorColor" />
+        <!--<attr name="transparentIndicatorResource" />-->
         <attr name="indicatorSize" />
-        <attr name="indicatorGapSize" />
-        <attr name="indicatorScrollSpeed" />
-        <attr name="indicatorVisibleItems" />
+        <!--<attr name="indicatorGapSize" />-->
+        <!--<attr name="indicatorScrollSpeed" />-->
+        <!--<attr name="indicatorVisibleItems" />-->
     </declare-styleable>
 
     <declare-styleable name="ScrollViewPagerIndicator">

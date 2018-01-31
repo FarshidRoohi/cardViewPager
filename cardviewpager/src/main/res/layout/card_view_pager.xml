@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,6 +10,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
@@ -17,11 +19,23 @@
             android:clipToPadding="false"
             android:overScrollMode="always" />
 
-        <com.zarinpal.libs.cardviwepager.ScrollViewPagerIndicator
-            android:id="@+id/view_pager_indicator"
+        <com.shuhart.bubblepagerindicator.BubblePageIndicator
+            android:id="@+id/indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginTop="10dp"
+            app:fillColor="@color/select_indicator"
+            app:pageColor="@color/un_select_indicator"
+            app:radius="5dp" />
+
+
+        <!--<com.zarinpal.libs.cardviwepager.ScrollViewPagerIndicator-->
+        <!--android:id="@+id/view_pager_indicator"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:visibility="gone" />-->
+
     </LinearLayout>
 </LinearLayout>

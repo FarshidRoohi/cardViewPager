@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addCardItem(item3);
         adapter.addCardItem(item4);
         adapter.addCardItem(item5);
+
         adapter.setElevation(0.6f);
         viewPager.setAdapter(adapter);
         viewPager.isShowShadowTransformer(true);
