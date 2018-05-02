@@ -2,7 +2,6 @@ package com.zarinpal.libs.cardviwepager;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -19,15 +18,11 @@ import com.shuhart.bubblepagerindicator.BubblePageIndicator;
 public class CardViewPager extends LinearLayout {
 
     private ViewPager             viewPager;
-    //    private ScrollViewPagerIndicator viewPagerIndicator;
     private ShadowTransformer     cardShadowTransformer;
     private BaseCardViewPagerItem viewPagerAdapter;
 
     private boolean visibilityIndicator;
     private Integer dotSize = 15;
-//    private Integer gapSize      = 5;
-//    private Integer scrollSpeed  = 400;
-//    private Integer visibleItems = 0;
 
     private Integer paddingLeft   = 20;
     private Integer paddingTop    = 0;
@@ -36,7 +31,6 @@ public class CardViewPager extends LinearLayout {
 
     private Integer selectIndicatorColor;
     private Integer unSelectIndicatorColor;
-//    private Drawable drawableTransparentIndicator;
 
     private BubblePageIndicator indicator;
 
@@ -52,10 +46,6 @@ public class CardViewPager extends LinearLayout {
         // attrs indicator
         this.dotSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_indicatorSize,
                 Utilities.dpToPx(getContext(), this.dotSize));
-//        this.gapSize = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_indicatorGapSize,
-//                Utilities.dpToPx(getContext(), this.gapSize));
-//        this.scrollSpeed = typedArray.getInteger(R.styleable.CardViewPager_indicatorScrollSpeed, this.scrollSpeed);
-//        this.visibleItems = typedArray.getInteger(R.styleable.CardViewPager_indicatorVisibleItems, 0);
         this.visibilityIndicator = typedArray.getBoolean(R.styleable.CardViewPager_visibleIndicator, true);
         // attrs viewPager
         this.paddingLeft = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleLeftPadding, this.paddingLeft);
@@ -63,20 +53,10 @@ public class CardViewPager extends LinearLayout {
         this.paddingRight = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleRightPadding, this.paddingRight);
         this.paddingBottom = typedArray.getDimensionPixelSize(R.styleable.CardViewPager_visibleBottomPadding, this.paddingBottom);
 
-        this.selectIndicatorColor = typedArray.getColor(R.styleable.CardViewPager_selectIndicatorColor, ContextCompat.getColor(getContext(), R.color.select_indicator));
-        this.unSelectIndicatorColor = typedArray.getColor(R.styleable.CardViewPager_unSelectIndicatorColor, ContextCompat.getColor(getContext(), R.color.un_select_indicator));
-//        this.drawableTransparentIndicator = typedArray.getDrawable(R.styleable.CardViewPager_transparentIndicatorResource);
-
-//        if (this.drawableSelectIndicator == null) {
-//            this.drawableSelectIndicator = ContextCompat.getDrawable(getContext(), R.drawable.circle_selected_indicator);
-//        }
-//        if (this.drawableUnSelectIndicator == null) {
-//            this.drawableUnSelectIndicator = ContextCompat.getDrawable(getContext(), R.drawable.circle_unselected_indicator);
-//        }
-//        if (this.drawableTransparentIndicator == null) {
-//            this.drawableTransparentIndicator = ContextCompat.getDrawable(getContext(), R.drawable.circle_transparent_indicator);
-//        }
-
+        this.selectIndicatorColor = typedArray.getColor(R.styleable.CardViewPager_selectIndicatorColor,
+                ContextCompat.getColor(getContext(), R.color.select_indicator));
+        this.unSelectIndicatorColor = typedArray.getColor(R.styleable.CardViewPager_unSelectIndicatorColor,
+                ContextCompat.getColor(getContext(), R.color.un_select_indicator));
 
         typedArray.recycle();
 
@@ -92,7 +72,6 @@ public class CardViewPager extends LinearLayout {
 
         View view = LayoutInflater.from(getContext()).inflate(R.layout.card_view_pager, this);
         this.viewPager = view.findViewById(R.id.view_pager);
-//        this.viewPagerIndicator = view.findViewById(R.id.view_pager_indicator);
 
         this.indicator = view.findViewById(R.id.indicator);
 
@@ -103,8 +82,6 @@ public class CardViewPager extends LinearLayout {
         this.indicator.setPageColor(this.unSelectIndicatorColor);
         this.indicator.setRadius(this.dotSize);
         this.indicator.setVisibility(this.visibilityIndicator ? VISIBLE : GONE);
-//        this.viewPagerIndicator.initAttrbs(this.dotSize, this.gapSize, this.scrollSpeed, this.visibleItems);
-//        this.viewPagerIndicator.setDrawableResource(this.drawableSelectIndicator, this.drawableUnSelectIndicator, this.drawableTransparentIndicator);
         this.viewPager.setPadding(this.paddingLeft, this.paddingTop, this.paddingRight, this.paddingBottom);
 
     }
@@ -115,7 +92,6 @@ public class CardViewPager extends LinearLayout {
         }
         this.viewPagerAdapter = adapter;
         this.viewPager.setAdapter(this.viewPagerAdapter);
-//        this.viewPagerIndicator.attachViewPager(this.viewPager);
         this.indicator.setViewPager(this.viewPager);
     }
 
