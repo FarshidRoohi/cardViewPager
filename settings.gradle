@@ -1,1 +1,1 @@
-include ':app', ':cardviewpager'
+include ':sample', ':cardviewpager'
