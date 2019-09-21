@@ -1,12 +1,12 @@
 package com.zarinpal.libs.cardviewpager.demo;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.widget.Toast;
 
 import com.zarinpal.libs.cardviwepager.CardViewPager;
-import com.zarinpal.libs.cardviwepager.ShadowTransformer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Model item4 = new Model("Title 4", Color.parseColor("#3498db"));
         Model item5 = new Model("Title 5", Color.parseColor("#2c3e50"));
 
-        Adapter adapter = new Adapter();
+        final Adapter adapter = new Adapter();
         adapter.addCardItem(item1);
         adapter.addCardItem(item2);
         adapter.addCardItem(item3);
@@ -33,6 +33,23 @@ public class MainActivity extends AppCompatActivity {
         adapter.setElevation(0.6f);
         viewPager.setAdapter(adapter);
         viewPager.isShowShadowTransformer(true);
+
+        viewPager.getViewPager().addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                Toast.makeText(MainActivity.this, adapter.getItem(i).getTitle(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
 
     }
 }
