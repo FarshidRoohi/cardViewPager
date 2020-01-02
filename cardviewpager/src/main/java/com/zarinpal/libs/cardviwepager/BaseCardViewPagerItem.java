@@ -1,8 +1,8 @@
 package com.zarinpal.libs.cardviwepager;
 
-import android.support.annotation.LayoutRes;
-import android.support.v4.view.PagerAdapter;
-import android.support.v7.widget.CardView;
+import androidx.annotation.LayoutRes;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.cardview.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

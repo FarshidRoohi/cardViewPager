@@ -1,6 +1,6 @@
 package com.zarinpal.libs.cardviwepager;
 
-import android.support.v7.widget.CardView;
+import androidx.cardview.widget.CardView;
 
 /**
  * Card ViewPager Created by farshid roohi on 12/12/17.

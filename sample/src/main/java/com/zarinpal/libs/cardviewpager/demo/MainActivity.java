@@ -1,12 +1,11 @@
 package com.zarinpal.libs.cardviewpager.demo;
 
 import android.graphics.Color;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.zarinpal.libs.cardviwepager.CardViewPager;
-import com.zarinpal.libs.cardviwepager.ShadowTransformer;
 
 public class MainActivity extends AppCompatActivity {
 
