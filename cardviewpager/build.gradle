@@ -45,22 +45,22 @@ android {
         archives generateJavadocsJar
         archives generateSourcesJar
     }
-    version = "0.5.3"
+    version = "0.5.4"
     group = "com.zarinpal"
 
     bintray {
-        user = 'xxxx'
-        key = 'xxxx'
+        user = 'xxx'
+        key = 'xxx'
         pkg {
             repo = 'lib'
             userOrg = 'zarinpali'
             name = 'CardViewPager'
 
             version {
-                name = '0.5.3'
+                name = '0.5.4'
                 desc = 'android  Card ViewPager'
                 released = new Date()
-                vcsTag = '0.5.3'
+                vcsTag = '0.5.4'
             }
 
             licenses = ['Apache-2.0']
